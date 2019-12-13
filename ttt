@@ -1,0 +1,7 @@
+info=`/root/stations_active.sh | grep $1`
+
+if [ $1 == "$info" ]
+  then
+    echo "lal"
+fi
+echo asdasdsad

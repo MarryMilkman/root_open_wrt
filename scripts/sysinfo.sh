@@ -1,0 +1,7 @@
+strings /proc/device-tree/compatible | head -1| awk '{print "ModelName;"$1 ""}'
+strings /proc/device-tree/compatible|tail -1| awk '{print "ProcessorName;"$1 ""}'
+ethtool -P eth0 | awk '{print "SN;"$3 ""}'| awk '{ gsub (":", "", $0); print}'
+ethtool -P eth0 | awk '{print "EtherA;"$3 ""}'
+ethtool -P eth1 | awk '{print "EtherB;"$3 ""}'
+ethtool -P wlan0 | awk '{print "WiFiA;"$3 ""}'
+ethtool -P wlan1 | awk '{print "WiFiB;"$3 ""}'
